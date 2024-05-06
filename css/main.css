@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'iryekanr';
+    src: url('../fonts/iryekanr.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/iryekanr.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/iryekanr.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/iryekanr.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/iryekanr.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/iryekanr.svg#svgFontName') format('svg');
+    /* Legacy iOS */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+}
+
+/*body {
+    font-family: 'iryekanr', sans-serif;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-align: right;
+    box-sizing: border-box;
+    -webkit-font-smoothing: subpixel-antialiased;
+    color: #666;
+    overflow-x: hidden;
+    line-height: 25px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    direction: rtl;
+}*/
+
+body {
+    font-family: 'iryekanr';
+}

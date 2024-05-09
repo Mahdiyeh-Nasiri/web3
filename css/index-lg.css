@@ -243,6 +243,11 @@
         border: 1.5px solid white;
     }
     /*section-5*/
-
+    .banner{
+        width: 100%;
+        height: auto;
+        border:1.5px solid white;
+        cursor: pointer;
+    }
 
     /*section-6*/

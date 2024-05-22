@@ -27,10 +27,7 @@ li>a {
     cursor: pointer;
 }
 .topmenu>li>a{
-    font-size: calc(1vw + 1px);
-}
-.navigation>ul>li>a {
-    font-size: calc(1vw + 3px);
+    font-size: calc(0.5vw + 7px);
 }
 i{
     cursor: pointer;

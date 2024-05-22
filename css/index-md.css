@@ -1,0 +1,401 @@
+@media all and (min-width: 768px){
+    .header_menu {
+        width: 100%;
+        height: 30px;
+        background-color: rgb(100, 104, 113);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .topmenu {
+        width: 75%;
+        height: 25px;
+
+        display: flex;
+        justify-content:flex-start;
+        margin-right:7px;
+        margin-bottom: 0px;
+        padding-left: 0px;
+    }
+    
+    .topmenu>div{
+        width:1px;
+        height:12px;
+        background-color: rgb(170, 170, 170);
+        margin:7px 7px 7px 7px ;
+    }
+
+    .topmenu>li {
+        height: 25px;
+    }
+
+    .topmenu>li>a {
+        line-height: 25px;
+        text-align: center;
+        text-decoration: none;
+        font-family:'iryekanr';
+        font-weight: 400;
+        color: rgb(170, 170, 170);
+        transition: all 200ms ease 0s;
+    }
+
+    .topmenu>li>a:hover {
+        color: rgb(255, 255, 255);
+    }
+    .language_menu{
+        width: 25%;
+        height: 25px;
+    }
+    .language_menu>ul{
+        justify-content:flex-end;
+        padding-top: 2px;
+    }
+    .language_menu>ul>li>a{
+        color:white;
+    }
+    .language_menu>ul>li>a>i{
+        color:white;
+        line-height: 25px;
+        margin-left: 5px;
+        transition: all 200ms ease;
+    }
+    .language_menu>ul>li>a>i:hover{
+        color: rgb(170, 170, 170);
+    }
+    .navigation {
+        width: 100%;
+        height: 74px;
+        display: flex;
+        background-color: white;
+        transition: all 300ms ease 0s;
+    }
+    .slogan{
+        width:20%;
+    }
+    .navigation>ul {
+        width: 70%;
+        height: 74px;
+
+        display: flex;
+        justify-content: center;
+        padding:0px;
+        margin-bottom: 0px;
+    }
+
+    .navigation>ul>li {
+        margin-right: 20px;
+    }
+
+    .navigation>ul>li>a {
+        height: 75px;
+        line-height: 75px;
+        text-align: center;
+        padding-left: 0 10px;
+        text-decoration: none;
+        font-family:'iryekanr';
+        color: rgb(78,78,78);
+        font-weight: 400;
+        font-style: normal;
+        transition: all 200ms ease;
+    }
+
+    .navigation>ul>li>a:hover {
+        color: rgb(153,205,97);
+    }
+
+    .navigation>i{
+        font-size: calc(2vw + 2px);
+        color:rgb(179,179,179);
+        line-height: 75px;
+    }
+}
+/*
+    .icon1,
+    .icon2,
+    .icon3 {
+        display: none;
+    }
+
+    .products {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        height: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 3px 0 3px rgb(170, 170, 170), -3px 0 3px rgb(170, 170, 170), 0 3px 3px rgb(170, 170, 170);
+        opacity: 0%;
+        transition: all 300ms ease 0s;
+    }
+
+    .products>div {
+        width: 25%;
+        text-align: center;
+        line-height: 200px;
+        font-family: sans-serif;
+        //font-size: 18px;
+        color: black;
+    }
+
+    .products>div:not(:last-of-type) {
+        border-right: 1px solid rgb(200, 200, 200);
+    }
+
+    .show-submenu {
+        opacity: 100%;
+    }
+
+    .new-navigation {
+        background-color: pink;
+        position: fixed;
+        top: 0;
+    }*/
+/*section2*/
+    .slider{
+        position: relative;
+    }
+    .slider-container {
+    width: 100%;
+    border: 2px solid white;
+    background-color: white;
+    position: relative;
+    }
+
+    img {
+    display: block;
+    width: 100%;
+    }
+
+    .icon1,
+    .icon2 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    //font-size: 35px;
+    text-align: center;
+    line-height: 40px;
+    top: 50%;
+    margin-top: -20px;
+    cursor: pointer;
+    background-color: rgba(49, 49, 49, 0.081);
+    color: rgb(104, 103, 103);
+    transition: all 300ms ease 0s;
+    }
+
+    .icon1:hover,
+    .icon2:hover {
+    color: rgb(182, 182, 182);
+    }
+
+    .icon1 {
+    left: 3%;
+    }
+
+    .icon2 {
+    right: 3%;
+    }
+    .image_time{
+    position: absolute;
+    width: 400px;
+    height: 15px;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+    left:32%;
+    
+    }
+    .image_time>.rect {
+    width: 60px;
+    height: 12px;
+    background-color: rgb(0,0,0,0.5);
+    margin: 5px;
+    cursor: pointer;
+    }
+
+/*section-4 & section-6*/
+    .groups{
+        width: 100%;
+    }
+    .groupstop{
+        width: 100%;
+        display: flex;
+    }
+    .groupsbottom{
+        width: 100%;
+        display: flex;
+    }
+    .pic{
+        width: 25%;
+        border: 1.5px solid white;
+    }
+    /*section-5*/
+    .banner{
+        width: 100%;
+        height: auto;
+        border:1.5px solid white;
+        cursor: pointer;
+    }
+
+    /*section-6*/
+    .secondgroups{
+        width: 100%;
+        display: flex;
+    }
+    .groupsright{
+        width: 50%;
+    }
+    .groupsleft{
+        width:50%;
+    }
+    .lefttop{
+        width: 100%;
+        display: flex;
+    }
+    .leftbottom{
+        width: 100%;
+        display: flex;
+    }
+    .pic2{
+        width: 50%;
+        border: 1.5px solid white;
+    }
+    .pic3{
+        width: 100%;
+        border: 1.5px solid white;
+    }
+
+/*section 7*/
+    .contactus{
+        width: 100%;
+        display: flex;
+    }
+    .contactdivider{
+        width: 25%;
+        height: 150px;
+        padding-top: 50px;
+    }
+    .contactdivider>p:first-of-type{
+        text-align: right;
+        text-decoration: none;
+        font-family:'iryekanr';
+        color: rgb(78,78,78);
+        //font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        text-align: right;
+        margin: 6px;
+    }
+        .contactdivider>p:nth-of-type(2){
+        text-align: right;
+        text-decoration: none;
+        font-family:'iryekanr';
+        color: rgb(131, 131, 131);
+        //font-size: 12px;
+        font-weight: lighter;
+        font-style: normal;
+        text-align: right;
+    }
+    .contactdivider>div{
+        border: 2px solid rgb(215, 215, 215);
+        width: fit-content;
+        padding: 8px;
+        border-radius: 5px;
+        transition: all 300ms ease;
+        color:rgb(215, 215, 215);
+    }
+    .contactdivider>div:hover{
+        border: 2px solid rgb(153, 204, 51);
+        color: rgb(153,204,51);
+    }
+    .contactdivider>ul{
+
+        display: flex;
+        justify-content: center;
+    }
+    .aparat{
+        width: 40px;
+        height: 40px;
+        color:rgb(153, 204, 51);
+        margin: 20px 5px;
+    }
+/*section 8*/
+    .footer{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(237,237,237);
+    padding:20px 7%;
+    }
+    .content{
+        width: 12.5%;
+    }
+
+    .content>ul>li>a{
+        text-align: right;
+        color:#999;
+        //font-size: 10px;
+        font-family: 'iryekanr';
+        transition: all 200ms ease;
+    }
+
+    .content>ul>li>a:hover{
+        color: rgb(153,205,97);
+    }
+
+    .content>ul>li>p{
+        text-align: right;
+        color:#666666;
+        //font-size: 10px;
+        font-family: 'iryekanr';
+    }
+/*section 9*/
+    .footer2{
+        width: 100%;
+        background-color: rgb(100,104,113);
+        padding: 1% 5% 0 7%;
+    }
+    .footerlist>ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-bottom: 5px;
+    }
+    .footerlist>ul>li{
+        padding-left: 13px;
+        padding-bottom: 0px;
+    }
+    .footerlist>ul>li>a{
+        color: #fff;
+        cursor: pointer;
+        //font-size: 10px;
+        font-family: 'iryekanr';
+    }
+    .copydiv{
+        display: flex;
+        justify-content:space-between;
+    }
+    .copyright{
+        color:#cbcaca;
+        //font-size: 10px;
+        font-family: 'iryekanr';
+        margin-bottom: 4px;
+    }
+    .copyright>a{
+        color: #fff;
+        cursor: pointer;
+        text-decoration:none;
+        //font-size: 10px;
+        font-family: 'iryekanr';
+    }
+
+
+@media all and (max-width: 991px){
+    .navigation>i{
+        display: none;
+    }
+
+}
+
+

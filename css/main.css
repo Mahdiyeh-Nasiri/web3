@@ -15,26 +15,23 @@
     margin: 0;
     border: 0;
     outline: 0;
+    box-sizing: border-box;
 }
 
-/*body {
-    font-family: 'iryekanr', sans-serif;
-    background: #fff;
-    font-size: 14px;
-    font-weight: 400;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    text-align: right;
-    box-sizing: border-box;
-    -webkit-font-smoothing: subpixel-antialiased;
-    color: #666;
-    overflow-x: hidden;
-    line-height: 25px;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    direction: rtl;
-}*/
-
-body {
-    font-family: 'iryekanr';
+ul,
+li{
+    list-style-type: none;
+}
+li>a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.topmenu>li>a{
+    font-size: calc(1vw + 1px);
+}
+.navigation>ul>li>a {
+    font-size: calc(1vw + 3px);
+}
+i{
+    cursor: pointer;
 }

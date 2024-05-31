@@ -1,4 +1,15 @@
 @media all and (min-width: 768px){
+    .header_menu {
+        padding: 0.5% 5%;
+    }
+    .topmenu{
+        width: 90%; 
+    }
+    .language_menu{
+        width: 10%;
+        justify-content: flex-end;
+    }
+
     .navigation {
         width: 100%;
         height:80px;
@@ -185,11 +196,10 @@
     }
 
 }
-@media all and (max-width: 991px){
+@media all and (min-width: 768px) and (max-width: 991px){
     .navigation>i{
         display: none;
     }
-
 }
 
 

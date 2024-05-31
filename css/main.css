@@ -31,27 +31,22 @@ i{
     cursor: pointer;
 }
 
-
     .header_menu {
         width: 100%;
         background-color: rgb(100, 104, 113);
         display: flex;
-        justify-content: space-between;
     }
     .topmenu {
-        width: 75%;
         display: flex;
-        justify-content:flex-start;
         align-items: center;
-        margin-right:7px;
-        margin-bottom: 0px;
-        padding:2.5px 5%;
+        margin: 0;
+        padding: 0;
     }
     .topmenu>div{
         width:1px;
         height:80%;
         background-color: rgb(170, 170, 170);
-        margin:7px 7px 7px 7px ;
+        margin:0px 7px;
     }
     .topmenu>li>a {
         text-align: center;
@@ -66,25 +61,18 @@ i{
         color: rgb(255, 255, 255);
     }
     .language_menu{
-        width: 25%;
-    }
-    .language_menu>ul{
-        justify-content:flex-end;
+        display: flex;
     }
     .language_menu>ul>li>a{
         color:white;
     }
     .language_menu>ul>li>a>i{
         color:white;
-        line-height: 25px;
         margin-left: 5px;
         transition: all 200ms ease;
     }
     .language_menu>ul>li>a>i:hover{
         color: rgb(170, 170, 170);
-    }
-    .slogan{
-        width:20%;
     }
 /*
     .icon1,
@@ -187,8 +175,13 @@ i{
         margin-left: 10px;
         cursor: pointer;
     }
-    .rect:nth-last-child(1){
+    /*.rect:nth-last-child(1){
         margin-left: 0px;   
+    }*/
+    .percentage{
+        width: 0%;
+        height:100%;
+        background-color: green;
     }
 
 /*section-4 & section-6*/

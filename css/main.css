@@ -214,9 +214,16 @@ i{
         border: 1.5px solid white;
     }
     .pic3{
-        position: relative;
         width: 100%;
-        border: 1.5px solid white;
+        height: 100%;
+        display: block;
+        position: relative;
+        flex: 0 0 100%;
+    }
+    .pic3 img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     .secondgroups span{
         position: absolute;
@@ -239,6 +246,42 @@ i{
         position: absolute;
         bottom: 7px;
         right: 7px;
+    }
+    .slider2{
+        display: flex;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height:100%;
+        transition: transform 0.3s ease;
+    }
+    .groupsright button{
+        position: absolute;
+        top:50%;  
+    }
+    .groupsright button .icon1,
+    .groupsright button .icon2 {
+        width: 40px;
+        height: 40px;
+        font-size: calc(3vw + 5px);
+        text-align: center;
+        line-height: 40px;
+        margin-top: -20px;
+        cursor: pointer;
+        background-color: rgba(49, 49, 49, 0.5);
+        color: rgb(141, 141, 141);
+        transition: all 300ms ease 0s;
+    }
+    .groupsright button .icon1:hover,
+    .groupsright button .icon2:hover {
+        color: rgb(182, 182, 182);
+    }
+    .groupsright button .icon1 {
+        left: 3%;
+    }
+    .groupsright button .icon2 {
+        right: 3%;
     }
 /*section 7*/
     .contactus{

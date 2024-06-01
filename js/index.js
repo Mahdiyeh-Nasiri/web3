@@ -142,8 +142,9 @@ window.addEventListener("load", function () {
         }
 
 */
- /*//first slider
-            const BUTTONS = document.querySelectorAll("button");
+
+ //first slider
+            /*const BUTTONS = document.querySelectorAll("button");
             const PICTURE = document.querySelector(".slidercontainer>img");
             const PROGRESS = document.querySelector(".image_time>.rect");
             const PARAGRAPH = document.querySelector("p");
@@ -269,26 +270,42 @@ window.addEventListener("load", function () {
 
             // Initial setup
             updateSlider();
+            
             */
-
 // imagecontanier hover
-const images = document.querySelectorAll('.pic');
+            const images = document.querySelectorAll('.pic');
 
-images.forEach((image, index) => {
-  image.addEventListener('mouseover', () => {
-    images.forEach((img, i) => {
-      if (i !== index) {
-        img.style.opacity = '0.5';
-      } else {
-        img.style.opacity = '1';
+            images.forEach((image, index) => {
+            image.addEventListener('mouseover', () => {
+                images.forEach((img, i) => {
+                if (i !== index) {
+                    img.style.opacity = '0.8';
+                } else {
+                    img.style.opacity = '1';
+                    }
+                });
+                });
+                    image.addEventListener('mouseout', () => {
+                    images.forEach((img, i) => {
+                if (i !== index) {
+                    img.style.opacity = '1';
+                }
+                });
+                    });
+            });
+
+//slider2
+        const slider = document.querySelector('.slider2');
+        const slides = document.querySelectorAll('.pic3');
+        const slideWidth = slides[0].clientWidth;
+        let counter = 0;
+
+        function slide() {
+        counter++;
+        if (counter === slides.length) {
+            counter = 0;
         }
-    });
-    });
-        image.addEventListener('mouseout', () => {
-        images.forEach((img, i) => {
-      if (i !== index) {
-        img.style.opacity = '1';
-      }
-    });
-        });
-        });
+        slider.style.transform = `translateX(${slideWidth * counter}px)`;
+        }
+
+        setInterval(slide, 1000); // Change slide every 3 seconds

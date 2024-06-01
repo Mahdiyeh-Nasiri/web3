@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizontal Slider</title>
+<style>
+  .container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .slider {
+    width: 50%;
+    overflow: hidden;
+  }
+  
+  .slide-container {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slide {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  .text {
+    width: 50%;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="slider">
+    <div class="slide-container" id="slideContainer">
+      <div class="slide"><img src="image1.jpg" alt="Slide 1"></div>
+      <div class="slide"><img src="image2.jpg" alt="Slide 2"></div>
+      <div class="slide"><img src="image3.jpg" alt="Slide 3"></div>
+      <!-- Add more slides as needed -->
+    </div>
+  </div>
+
+  <div class="text">
+    <h2>Some Text</h2>
+    <p>This is the text content that will appear beside the slider.</p>
+  </div>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const slideContainer = document.getElementById('slideContainer');
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  setInterval(nextSlide, 3000);
+</script>
+
+</body>
+</html>

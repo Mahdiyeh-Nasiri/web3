@@ -188,15 +188,14 @@ i{
     .groups{
         width: 100%;
     }
-    .groupstop{
-        width: 100%;
-    }
-    .groupsbottom{
+    .image-container{
         width: 100%;
     }
     .pic{
         border: 1.5px solid white;
+        transition: opacity 0.3s ease;
     }
+
 /*section-5*/
     .banner{
         width: 100%;

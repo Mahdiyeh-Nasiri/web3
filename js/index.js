@@ -270,3 +270,25 @@ window.addEventListener("load", function () {
             // Initial setup
             updateSlider();
             */
+
+// imagecontanier hover
+const images = document.querySelectorAll('.pic');
+
+images.forEach((image, index) => {
+  image.addEventListener('mouseover', () => {
+    images.forEach((img, i) => {
+      if (i !== index) {
+        img.style.opacity = '0.5';
+      } else {
+        img.style.opacity = '1';
+        }
+    });
+    });
+        image.addEventListener('mouseout', () => {
+        images.forEach((img, i) => {
+      if (i !== index) {
+        img.style.opacity = '1';
+      }
+    });
+        });
+        });

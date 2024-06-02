@@ -348,23 +348,87 @@ window.addEventListener("load", function () {
         updateSlider();
 
 //footer in 300-575
-        const HEADFOOTER = document.querySelectorAll(".headfooter");
+       const HEADFOOTER = document.querySelectorAll(".headfooter");
         const SUB = document.querySelectorAll(".subfooter");
-
-        HEADFOOTER[0].addEventListener("click", function () {
-            SUB[1].classList.remove("open");
-            SUB[2].classList.remove("open");
-            SUB[0].classList.toggle("open");
-        });
-
-        HEADFOOTER[1].addEventListener("click", function () {
+        let current = 0;
+        
+            HEADFOOTER[0].addEventListener("click", function () {
+                SUB[1].classList.remove("open");
+                SUB[2].classList.remove("open");
+                SUB[3].classList.remove("open");
+                SUB[4].classList.remove("open");
+                SUB[5].classList.remove("open");
+                SUB[6].classList.remove("open");
+                SUB[7].classList.remove("open");
+                SUB[0].classList.toggle("open");
+            });
+                HEADFOOTER[1].addEventListener("click", function () {
             SUB[0].classList.remove("open");
             SUB[2].classList.remove("open");
+            SUB[3].classList.remove("open");
+            SUB[4].classList.remove("open");
+            SUB[5].classList.remove("open");
+            SUB[6].classList.remove("open");
+            SUB[7].classList.remove("open");
             SUB[1].classList.toggle("open");
-        });
-
-        HEADFOOTER[2].addEventListener("click", function () {
-            SUB[0].classList.remove("open");
+                });
+                HEADFOOTER[2].addEventListener("click", function () {
             SUB[1].classList.remove("open");
+            SUB[0].classList.remove("open");
+            SUB[3].classList.remove("open");
+            SUB[4].classList.remove("open");
+            SUB[5].classList.remove("open");
+            SUB[6].classList.remove("open");
+            SUB[7].classList.remove("open");
             SUB[2].classList.toggle("open");
-        });
+                });
+                HEADFOOTER[3].addEventListener("click", function () {
+            SUB[1].classList.remove("open");
+            SUB[2].classList.remove("open");
+            SUB[0].classList.remove("open");
+            SUB[4].classList.remove("open");
+            SUB[5].classList.remove("open");
+            SUB[6].classList.remove("open");
+            SUB[7].classList.remove("open");
+            SUB[3].classList.toggle("open");
+                });
+                HEADFOOTER[4].addEventListener("click", function () {
+            SUB[1].classList.remove("open");
+            SUB[2].classList.remove("open");
+            SUB[3].classList.remove("open");
+            SUB[0].classList.remove("open");
+            SUB[5].classList.remove("open");
+            SUB[6].classList.remove("open");
+            SUB[7].classList.remove("open");
+            SUB[4].classList.toggle("open");
+                });
+                HEADFOOTER[5].addEventListener("click", function () {
+            SUB[1].classList.remove("open");
+            SUB[2].classList.remove("open");
+            SUB[3].classList.remove("open");
+            SUB[4].classList.remove("open");
+            SUB[0].classList.remove("open");
+            SUB[6].classList.remove("open");
+            SUB[7].classList.remove("open");
+            SUB[5].classList.toggle("open");
+                });
+                HEADFOOTER[6].addEventListener("click", function () {
+            SUB[1].classList.remove("open");
+            SUB[2].classList.remove("open");
+            SUB[3].classList.remove("open");
+            SUB[4].classList.remove("open");
+            SUB[5].classList.remove("open");
+            SUB[0].classList.remove("open");
+            SUB[7].classList.remove("open");
+            SUB[6].classList.toggle("open");
+                });
+                HEADFOOTER[7].addEventListener("click", function () {
+            SUB[1].classList.remove("open");
+            SUB[2].classList.remove("open");
+            SUB[3].classList.remove("open");
+            SUB[4].classList.remove("open");
+            SUB[5].classList.remove("open");
+            SUB[6].classList.remove("open");
+            SUB[0].classList.remove("open");
+            SUB[7].classList.toggle("open");
+                });

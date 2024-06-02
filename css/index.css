@@ -1,7 +1,19 @@
 @media all and (max-width: 575px){
     .topmenu{
         width: 78%;
-        justify-content: center;
+        justify-content: right;
+        padding:1% 5%;
+    }
+    .topmenu>div{
+        width:1px;
+        height:70%;
+        background-color: rgb(170, 170, 170);
+        margin:0px 4px;
+    }
+    .topmenu>li>a {
+        font-size: calc(0.5vw + 6px);
+        display: flex;
+        align-items: center;
     }
     .language_menu{
         width: 22%;
@@ -98,6 +110,11 @@
     .contactdivider>p:nth-of-type(2){
         font-size: calc(1vw + 3px);
     }
+    .aparat{
+        width: 4vw;
+        height: 4vw;
+    }
+    }
 /*section 8*/
     .footer{
     justify-content: center;
@@ -106,8 +123,19 @@
     .content{
         width: 100%;
     }
-    .content>ul>li>a{
-        text-align: right;
+    .subfooter {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        transition: all 300ms ease 0s;
+        margin: 0;
+    }
+    .subfooter>li{
+        transition: all 300ms ease 0s;
+        line-height: 20px;
+        box-shadow: 0 0 1px 1px lightgrey;
+    }
+    .content>.subfooter>li>a{
         color:#999;
         font-size: calc(0.5vw + 3px);
         font-family: 'iryekanr';
@@ -115,49 +143,41 @@
         font-style: normal;
         transition: all 200ms ease;
         text-wrap: nowrap;
+        display: flex;
+        align-items: center;
+        padding: 0 20px 0px 0px;
     }
-    .content>ul>li>a:hover{
+    .content>.subfooter>li:hover a{
         color: rgb(255, 255, 255);
     }
+    .content>.subfooter>li:hover{
+        background-color:#b1afaf ;
+    }
+    .headfooter {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 10px;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        transition: all 400ms ease 0s;
+        margin: 0;
+        text-align: right;
+        color:#666666;
+        font-size: calc(0.5vw + 5px);
+        font-family: 'iryekanr';
+        font-weight: 500;
+        font-style: normal;
+        margin-bottom: 2px;
+    }
 
-.headfooter {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 10px;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    transition: all 400ms ease 0s;
-    margin: 0;
-    text-align: right;
-    color:#666666;
-    font-size: calc(0.5vw + 5px);
-    font-family: 'iryekanr';
-    font-weight: 500;
-    font-style: normal;
-    margin-bottom: 2px;
-}
+    .headfooter:hover{
+        background-color: rgb(100,104,113);
+        color: white;
+    }
 
-.headfooter:hover {
-    background-color: rgb(100,104,113);
-    color: white;
-}
-
-.subfooter {
-    height: 0;
-    padding: 0 5px;
-    overflow: hidden;
-    transition: all 300ms ease 0s;
-    margin: 0;
-}
-.subfooter>li{
-    line-height: 30px;
-    font-family: cursive;
-    text-align: justify;
-    color: rgb(219, 219, 219);
-}
-.open {
-    height: auto;
-}
+    .open {
+        height: auto;
+    }
 /*section 9*/
     .footer2{
         padding: 1% 7%;

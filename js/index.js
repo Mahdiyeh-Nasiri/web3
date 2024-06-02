@@ -296,16 +296,75 @@ window.addEventListener("load", function () {
 
 //slider2
         const slider = document.querySelector('.slider2');
-        const slides = document.querySelectorAll('.pic3');
+        const slides = document.querySelectorAll('.pic3'); 
+        let ICON_LEFT = document.querySelectorAll(".icon1");
+        let ICON_RIGHT = document.querySelectorAll(".icon2");
         const slideWidth = slides[0].clientWidth;
         let counter = 0;
-
-        function slide() {
-        counter++;
-        if (counter === slides.length) {
+        
+        function updateSlider() {
+        let slideWidth = slides[0].clientWidth;
+        slider.style.transform = `translateX(${slideWidth * counter}px)`;
+        }   
+        
+        function nextSlide() {
+        if (counter < slides.length - 1) {
+            counter++;
+        } else {
             counter = 0;
         }
-        slider.style.transform = `translateX(${slideWidth * counter}px)`;
+        updateSlider();
         }
 
-        setInterval(slide, 1000); // Change slide every 3 seconds
+        function prevSlide() {
+            counter--;
+            if (counter < 0) {
+                counter = slides.length - 1;
+            }
+                let slideWidth = slides[0].clientWidth;
+                slider.style.transform = `translateX(${-slideWidth * counter}px)`;
+        }                          
+        
+        ICON_LEFT[1].addEventListener("click", prevSlide);
+        ICON_RIGHT[1].addEventListener("click", nextSlide);
+
+        // Automatic sliding
+        function startSlide() {
+            interval = setInterval(slider, 1000);
+        }
+
+        function stopSlide() {
+            clearInterval(interval);
+        }
+
+        // Start automatic sliding
+        startSlide();
+
+        // Pause automatic sliding on mouseenter, resume on mouseleave
+        slider.addEventListener('mouseenter', stopSlide);
+        slider.addEventListener('mouseleave', startSlide);
+        
+        setInterval(nextSlide, 1000);
+        updateSlider();
+
+//footer in 300-575
+        const HEADFOOTER = document.querySelectorAll(".headfooter");
+        const SUB = document.querySelectorAll(".subfooter");
+
+        HEADFOOTER[0].addEventListener("click", function () {
+            SUB[1].classList.remove("open");
+            SUB[2].classList.remove("open");
+            SUB[0].classList.toggle("open");
+        });
+
+        HEADFOOTER[1].addEventListener("click", function () {
+            SUB[0].classList.remove("open");
+            SUB[2].classList.remove("open");
+            SUB[1].classList.toggle("open");
+        });
+
+        HEADFOOTER[2].addEventListener("click", function () {
+            SUB[0].classList.remove("open");
+            SUB[1].classList.remove("open");
+            SUB[2].classList.toggle("open");
+        });

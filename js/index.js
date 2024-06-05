@@ -142,137 +142,70 @@ window.addEventListener("load", function () {
         }
 
 */
+//first slider
+    const SLIDER_container = document.querySelector('.slider-container');
+        const IMAGE_SLIDER = document.querySelectorAll('.imageslide');
+        const slideWidth1 = IMAGE_SLIDER[0].clientWidth;
+        let index = IMAGE_SLIDER.length - 1;
+        const rectangles = document.querySelectorAll('.rect');
+let autoSlideInterval;
 
- //first slider
-            /*const BUTTONS = document.querySelectorAll("button");
-            const PICTURE = document.querySelector(".slidercontainer>img");
-            const PROGRESS = document.querySelector(".image_time>.rect");
-            const PARAGRAPH = document.querySelector("p");
-            const PICS = ["images/1.jpg", "images/2.jpg", "images/3.jpg", "images/4.jpg", "images/5.jpg", "images/6.jpg"];
-            
-            window.addEventListener("load", slidertime);
-            
-            function slidertime() {
-                position_right=-100%;
-                PICTURE.style.position_right= `${position_right}`;
-                if (position_right>=200%) {
-                    clearInterval(key);
-                }
+        function nextSlide1() {
+            index = (index - 1 + IMAGE_SLIDER.length) % IMAGE_SLIDER.length;
+            SLIDER_container.style.transition = 'transform 0.5s ease-in-out';
+            SLIDER_container.style.transform = `translateX(${slideWidth1 * index}px)`;
+            fillRectangle(index);
+        }
 
-                        }
+        function prevSlide1() {
+            index = (index + 1 + IMAGE_SLIDER.length) % IMAGE_SLIDER.length;
+            SLIDER_container.style.transition = 'transform 0.5s ease-in-out';
+            SLIDER_container.style.transform = `translateX(${slideWidth1 * index}px)`;
+            fillRectangle(index);
+        }
 
-                let index = 0;
-                let position_right = 100;
-                let key;
-
-                function fade_out(destination) {
-                    opacity_value -= 4;
-                    IMAGE.style.opacity = `${opacity_value}%`;
-                    if (opacity_value <= 0) {
-                        clearInterval(key);
-                        if (destination == "left") {
-                            index--;
-                            if (index == -1) {
-                                index = PICS.length - 1;
-                            }
-                        }
-                        else if (destination == "right") {
-                            index++;
-                            if (index == PICS.length) {
-                                index = 0;
-                            }
-                        }
-                        IMAGE.setAttribute("src", PICS[index]);
-                        key = setInterval(fade_in, 1);
-                    }
-                }
-
-                function fade_in() {
-                    opacity_value += 4;
-                    IMAGE.style.opacity = `${opacity_value}%`;
-                    if (opacity_value >= 100) {
-                        clearInterval(key);
-                    }
-                }
-
-                ICONS[0].addEventListener("click", () => key = setInterval(() => fade_out("left"), 1));
-                ICONS[1].addEventListener("click", () => key = setInterval(() => fade_out("right"), 1));
-
-            BUTTONS[2].addEventListener("click", function () {
-                let w = 0;
-                let key = setInterval(function () {
-                    w++;
-                    PROGRESS.style.width = `${w}%`;
-                    PARAGRAPH.textContent = `${w}%`
-                    if (w >= 100) {
-                        clearInterval(key);
-                    }
-                }, 30)
-            })
-
-
-            const PICS = ["images/1.jpg", "images/2.jpg", "images/3.jpg", "images/4.jpg", "images/5.jpg", "images/6.jpg"];
-
-            const slider = document.querySelector('.slider');
-            const progressBarContainer = document.querySelector('.progress-bars');
-
-            let currentIndex = 0;
-
-            // Create slides
-            PICS.forEach((pic) => {
-            const slide = document.createElement('div');
-            slide.classList.add('slide');
-            slide.innerHTML = `<img src="${pic}" alt="Image">`;
-            slider.appendChild(slide);
-            });
-
-            const slides = document.querySelectorAll('.slide');
-
-            // Create progress bars
-            slides.forEach((slide, index) => {
-            const progressBar = document.createElement('div');
-            progressBar.classList.add('progress-bar');
-            progressBarContainer.appendChild(progressBar);
-            });
-
-            const progressBars = document.querySelectorAll('.progress-bar');
-
-            // Update progress bar
-            function updateProgressBar() {
-            progressBars.forEach((progressBar, index) => {
-                if (index === currentIndex) {
-                progressBar.classList.add('active');
+        function fillRectangle(index) {
+            let reversedRectangles = Array.from(rectangles).reverse(); // Reverse the order of rectangles
+            reversedRectangles.forEach((rectangle, i) => {
+                if (i === index) {
+                    rectangle.style.transition = '3s ease-out';
+                    rectangle.style.backgroundPosition = 'right'; // Apply fill to the rightmost rectangle first
                 } else {
-                progressBar.classList.remove('active');
+                    rectangle.style.backgroundPosition = null;
+                    rectangle.style.transition = null;
                 }
             });
-            }
+        }
+            rectangles.forEach((rectangle, i) => {
+                rectangle.addEventListener('click', () => {
+                    index = rectangles.length - 1 - i; // Calculate the corresponding index of the image
+                    SLIDER_container.style.transition = 'transform 0.5s ease-in-out';
+                    SLIDER_container.style.transform = `translateX(${slideWidth1 * index}px)`;
+                    fillRectangle(index);
+                    // Display the corresponding image
+                    IMAGE_SLIDER.style.transform = `translateX(${slideWidth1 * index}px)`;
+                });
+            });
+        // Add event listeners to ICON_LEFT and ICON_RIGHT
+        document.querySelector('.icon1').addEventListener('click', nextSlide1);
+        document.querySelector('.icon2').addEventListener('click', prevSlide1);
 
-            // Move to next slide
-            function nextSlide() {
-            if (currentIndex < slides.length - 1) {
-                currentIndex++;
-            } else {
-                currentIndex = 0;
-            }
-            updateSlider();
-            }
+// Automatically switch to the next slide every 3 seconds
+        
+                function startSlide1() {
+                    autoSlideInterval = setInterval(nextSlide1, 3000);
+                }
 
-            // Update slider position
-            function updateSlider() {
-            const slideWidth = slides[0].clientWidth;
-            slider.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
-            updateProgressBar();
-            }
+                function stopSlide1() {
+                    clearInterval(autoSlideInterval);
+                }
 
-            // Automatically move to next slide every 3 seconds
-            setInterval(nextSlide, 3000);
+                startSlide1();
 
-            // Initial setup
-            updateSlider();
-            
-            */
-// imagecontanier hover
+                // Add event listeners to start and stop slider on mouseenter and mouseleave
+                SLIDER_container.addEventListener('mouseenter', stopSlide1);
+                SLIDER_container.addEventListener('mouseleave', startSlide1);
+//imagecontanier hover
             const images = document.querySelectorAll('.pic');
 
             images.forEach((image, index) => {
@@ -293,59 +226,53 @@ window.addEventListener("load", function () {
                 });
                     });
             });
-
 //slider2
-        const slider = document.querySelector('.slider2');
-        const slides = document.querySelectorAll('.pic3'); 
-        let ICON_LEFT = document.querySelectorAll(".icon1");
-        let ICON_RIGHT = document.querySelectorAll(".icon2");
-        const slideWidth = slides[0].clientWidth;
-        let counter = 0;
-        
-        function updateSlider() {
-        let slideWidth = slides[0].clientWidth;
-        slider.style.transform = `translateX(${slideWidth * counter}px)`;
-        }   
-        
-        function nextSlide() {
-        if (counter < slides.length - 1) {
-            counter++;
-        } else {
-            counter = 0;
-        }
-        updateSlider();
-        }
 
-        function prevSlide() {
-            counter--;
-            if (counter < 0) {
-                counter = slides.length - 1;
-            }
+            const slider = document.querySelector('.slider2');
+            const slides = document.querySelectorAll('.pic3');
+            let counter = slides.length - 1; // Start from the last slide
+            let key2;
+
+            function updateSlider() {
                 let slideWidth = slides[0].clientWidth;
-                slider.style.transform = `translateX(${-slideWidth * counter}px)`;
-        }                          
-        
-        ICON_LEFT[1].addEventListener("click", prevSlide);
-        ICON_RIGHT[1].addEventListener("click", nextSlide);
+                slider.style.transform = `translateX(${slideWidth * counter}px)`;
+            }
 
-        // Automatic sliding
-        function startSlide() {
-            interval = setInterval(slider, 1000);
-        }
+            function nextSlide() {
+                if (counter < slides.length - 1) {
+                    counter++;
+                } else {
+                    counter = 0;
+                }
+                updateSlider();
+            }
 
-        function stopSlide() {
-            clearInterval(interval);
-        }
+            function prevSlide() {
+                if (counter > 0) {
+                    counter--;
+                } else {
+                    counter = slides.length - 1;
+                }
+                updateSlider();
+            }
 
-        // Start automatic sliding
-        startSlide();
+            document.querySelector('.icon-right').addEventListener("click", prevSlide);
+            document.querySelector('.icon-left').addEventListener("click", nextSlide);
 
-        // Pause automatic sliding on mouseenter, resume on mouseleave
-        slider.addEventListener('mouseenter', stopSlide);
-        slider.addEventListener('mouseleave', startSlide);
-        
-        setInterval(nextSlide, 1000);
-        updateSlider();
+            function startSlide() {
+                key2 = setInterval(prevSlide, 3000); // Adjust to call prevSlide to move towards the first slide
+            }
+
+            function stopSlide() {
+                clearInterval(key2);
+            }
+
+            startSlide();
+
+            slider.addEventListener('mouseenter', stopSlide);
+            slider.addEventListener('mouseleave', startSlide);
+
+            updateSlider();
 
 //footer in 300-575
        const HEADFOOTER = document.querySelectorAll(".headfooter");

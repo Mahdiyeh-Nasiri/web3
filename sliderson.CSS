@@ -1,0 +1,75 @@
+
+.slider{
+        position: relative;
+        width: 700px;
+    }
+    .slider-container {
+        width: 100%;
+        border: 2px solid white;
+        background-color: white;
+        position: relative;
+        display: flex;
+        transition: all 1000ms ease;
+    }
+    .imageslide {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+        flex: 0 0 100%;
+    }
+    
+    .icon1,
+    .icon2 {
+        position: absolute;
+        width: calc(3vw + 5px);
+        height: calc(3vw + 5px);
+        font-size: calc(3vw + 5px);
+        text-align: center;
+        line-height: calc(3vw + 5px);
+        top: 50%;
+        margin-top: calc(-3vw - 5px / 2);
+        cursor: pointer;
+        background-color: rgba(49, 49, 49, 0.5);
+        color: rgb(141, 141, 141);
+        transition: all 300ms ease 0s;
+        z-index: 2;
+    }
+    .icon1:hover,
+    .icon2:hover {
+        color: rgb(182, 182, 182);
+    }
+    .icon1 {
+        left: 3%;
+    }
+    .icon2 {
+        right: 3%;
+    }
+    .image_time{
+        position: absolute;
+        width: 30%;
+        height: 1.5%;
+        bottom: 5%;
+        display: flex;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);  
+        padding: 0px; 
+    }
+    .image_time>.rect {
+        width: 16.6666%;
+        height: 100%;
+        background-color: rgb(0,0,0,0.5);
+        margin-left: 1.5%;
+        cursor: pointer;
+        background: linear-gradient(to left, rgb(0,0,0,0.5) 50%, green 50%) right;
+        background-size: 200%;
+
+    }
+ 
+    .green-zero{
+        width: 0%;
+    }
+    .green-full{
+        width: 100%;
+    }

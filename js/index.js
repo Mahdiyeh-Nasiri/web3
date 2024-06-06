@@ -1,20 +1,23 @@
-/*navigation
-        const NAVIGATION = document.querySelector(".navigation");
-        const ITEM_PRODUCT1 = document.querySelectorAll("li")[0];
-        /*const ITEM_PRODUCT2 = document.querySelectorAll("li")[2];
+//navigation
+        const NAVIGATION = document.querySelector(".menu");
+        const ITEM_PRODUCT1 = document.querySelectorAll("li")[5];
+        const ITEM_PRODUCT2 = document.querySelectorAll("li")[7];
         const MENU = document.querySelector(".menu-list");
-        //const SUBMENU = document.querySelector(".submenu");
         const SUBMENU_PRODUCT = document.querySelector(".products");
+        const SUBMENU_SUPPORT = document.querySelector(".support");
         let screen_width = document.documentElement.clientWidth;
         const ICON_NAV1 = document.querySelector(".icon-nav1");
-        const ICON_NAV2 = document.querySelector(".icon-nav2");
-        
+        const RETURN = document.querySelector(".return");
+        const RETURN_SUPPORT = document.querySelector(".return-support");
+        const SUBLIST_SUPPORT = document.querySelectorAll(".sublist-support");        
         let key;
+        let key_nav2;
 
-window.addEventListener("resize", function () {
+    window.addEventListener("resize", function () {
     screen_width = this.document.documentElement.clientWidth;
-    if (screen_width >= 992) {
+    if (screen_width >= 576) {
         SUBMENU_PRODUCT.classList.add("hidden");
+        SUBMENU_SUPPORT.classList.add("hidden");
         ITEM_PRODUCT1.addEventListener("mouseover", function () {
             clearTimeout(key);
             SUBMENU_PRODUCT.classList.remove("hidden");
@@ -41,23 +44,65 @@ window.addEventListener("resize", function () {
                 SUBMENU_PRODUCT.classList.add("hidden");
             }, 401);
         });
+                ITEM_PRODUCT2.addEventListener("mouseover", function () {
+            clearTimeout(key_nav2);
+            SUBMENU_SUPPORT.classList.remove("hidden");
+            setTimeout(function () {
+                SUBMENU_SUPPORT.classList.add("show-submenu")
+            }, 1);
+        });
+        ITEM_PRODUCT2.addEventListener("mouseout", function () {
+            SUBMENU_SUPPORT.classList.remove("show-submenu");
+            key_nav2 = setTimeout(function () {
+                SUBMENU_SUPPORT.classList.add("hidden");
+            }, 401);
+        });
+        SUBMENU_SUPPORT.addEventListener("mouseover", function () {
+            clearTimeout(key_nav2);
+            SUBMENU_SUPPORT.classList.remove("hidden");
+            setTimeout(function () {
+                SUBMENU_SUPPORT.classList.add("show_submenu");
+            }, 1);
+        });
+        SUBMENU_SUPPORT.addEventListener("mouseout", function () {
+            SUBMENU_SUPPORT.classList.remove("show-submenu");
+            key_nav2 = setTimeout(function () {
+                SUBMENU_SUPPORT.classList.add("hidden");
+            }, 401);
+        });
     }
     else {
+        NAVIGATION.classList.add("hidden");
+        SUBMENU_PRODUCT.classList.add("hidden");
+        SUBMENU_SUPPORT.classList.add("hidden");
         MENU.addEventListener("click", function () {
-            NAVIGATION.classList.toggle("show-navigation");
+            NAVIGATION.classList.toggle("hidden");
+            NAVIGATION.classList.toggle("show-submenu");        
         });
         ITEM_PRODUCT1.addEventListener("click", function () {
+           SUBMENU_PRODUCT.classList.toggle("hidden");
             SUBMENU_PRODUCT.classList.add("show-submenu");
         });
-        ICON_NAV2.addEventListener("click", function () {
+        RETURN.addEventListener("click", function () {
             SUBMENU_PRODUCT.classList.remove("show-submenu");
+           SUBMENU_PRODUCT.classList.toggle("hidden");
         });
+        ITEM_PRODUCT2.addEventListener("click", function () {
+           SUBMENU_SUPPORT.classList.toggle("hidden");
+            SUBMENU_SUPPORT.classList.add("show-submenu");
+        });
+        RETURN_SUPPORT.addEventListener("click", function () {
+            SUBMENU_SUPPORT.classList.remove("show-submenu");
+           SUBMENU_SUPPORT.classList.toggle("hidden");
+        });
+
     }
 });
 window.addEventListener("load", function () {
     screen_width = document.documentElement.clientWidth;
-    if (screen_width >= 992) {
+    if (screen_width >= 576) {
         SUBMENU_PRODUCT.classList.add("hidden");
+        SUBMENU_SUPPORT.classList.add("hidden");
         ITEM_PRODUCT1.addEventListener("mouseover", function () {
             clearTimeout(key);
             SUBMENU_PRODUCT.classList.remove("hidden");
@@ -84,71 +129,68 @@ window.addEventListener("load", function () {
                 SUBMENU_PRODUCT.classList.add("hidden");
             }, 401);
         });
+            ITEM_PRODUCT2.addEventListener("mouseover", function () {
+            clearTimeout(key_nav2);
+            SUBMENU_SUPPORT.classList.remove("hidden");
+            setTimeout(function () {
+                SUBMENU_SUPPORT.classList.add("show-submenu")
+            }, 1);
+        });
+        ITEM_PRODUCT2.addEventListener("mouseout", function () {
+            SUBMENU_SUPPORT.classList.remove("show-submenu");
+            key_nav2 = setTimeout(function () {
+                SUBMENU_SUPPORT.classList.add("hidden");
+            }, 401);
+        });
+        SUBMENU_SUPPORT.addEventListener("mouseover", function () {
+            clearTimeout(key_nav2);
+            SUBMENU_SUPPORT.classList.remove("hidden");
+            setTimeout(function () {
+                SUBMENU_SUPPORT.classList.add("show_submenu");
+            }, 1);
+        });
+        SUBMENU_SUPPORT.addEventListener("mouseout", function () {
+            SUBMENU_SUPPORT.classList.remove("show-submenu");
+            key_nav2 = setTimeout(function () {
+                SUBMENU_SUPPORT.classList.add("hidden");
+            }, 401);
+        });
     }
     else {
+        NAVIGATION.classList.add("hidden");
+        SUBMENU_PRODUCT.classList.add("hidden");
+              SUBMENU_SUPPORT.classList.add("hidden");
         MENU.addEventListener("click", function () {
-            NAVIGATION.classList.toggle("show-navigation");
-        });zz
+            NAVIGATION.classList.toggle("hidden");
+            NAVIGATION.classList.toggle("show-submenu");
+        });
         ITEM_PRODUCT1.addEventListener("click", function () {
+            SUBMENU_PRODUCT.classList.toggle("hidden");
             SUBMENU_PRODUCT.classList.add("show-submenu");
         });
-        ICON_NAV2.addEventListener("click", function () {
+        RETURN.addEventListener("click", function () {
             SUBMENU_PRODUCT.classList.remove("show-submenu");
+           SUBMENU_PRODUCT.classList.toggle("hidden");
         });
+        ITEM_PRODUCT2.addEventListener("click", function () {
+           SUBMENU_SUPPORT.classList.toggle("hidden");
+            SUBMENU_SUPPORT.classList.add("show-submenu");
+        });
+        RETURN_SUPPORT.addEventListener("click", function () {
+            SUBMENU_SUPPORT.classList.remove("show-submenu");
+           SUBMENU_SUPPORT.classList.toggle("hidden");
+        });
+
     }
 });
 
-
-        /*MENU.addEventListener("click", function () {
-            NAVIGATION.classList.toggle("open-navigation");
-        });
-
-        if (screen_width >= 992) {
-
-            SUBMENU.addEventListener("mouseover", function () {
-                PRODUCTS.classList.add("show-submenu");
-            });
-
-            PRODUCTS.addEventListener("mouseover", function () {
-                PRODUCTS.classList.add("show-submenu");
-            });
-
-            SUBMENU.addEventListener("mouseleave", function () {
-                PRODUCTS.classList.remove("show-submenu");
-            });
-
-            PRODUCTS.addEventListener("mouseleave", function () {
-                PRODUCTS.classList.remove("show-submenu");
-            });
-
-            window.addEventListener("scroll", function () {
-                if (this.document.documentElement.scrollTop > 200) {
-                    NAVIGATION.classList.add("new-navigation");
-                }
-                else {
-                    NAVIGATION.classList.remove("new-navigation");
-                }
-            })
-
-        }
-        else {
-            ICON_NAV1.addEventListener("click", function () {
-                PRODUCTS.classList.add("show-submenu");
-            });
-
-            ICON_NAV2.addEventListener("click", function () {
-                PRODUCTS.classList.remove("show-submenu");
-            });
-        }
-
-*/
 //first slider
     const SLIDER_container = document.querySelector('.slider-container');
         const IMAGE_SLIDER = document.querySelectorAll('.imageslide');
         const slideWidth1 = IMAGE_SLIDER[0].clientWidth;
         let index = IMAGE_SLIDER.length - 1;
         const rectangles = document.querySelectorAll('.rect');
-let autoSlideInterval;
+        let autoSlideInterval;
 
         function nextSlide1() {
             index = (index - 1 + IMAGE_SLIDER.length) % IMAGE_SLIDER.length;
@@ -192,7 +234,7 @@ let autoSlideInterval;
 
 // Automatically switch to the next slide every 3 seconds
         
-                function startSlide1() {
+                /*function startSlide1() {
                     autoSlideInterval = setInterval(nextSlide1, 3000);
                 }
 
@@ -204,7 +246,8 @@ let autoSlideInterval;
 
                 // Add event listeners to start and stop slider on mouseenter and mouseleave
                 SLIDER_container.addEventListener('mouseenter', stopSlide1);
-                SLIDER_container.addEventListener('mouseleave', startSlide1);
+                SLIDER_container.addEventListener('mouseleave', startSlide1);*/
+setInterval(nextSlide1, 3000);
 //imagecontanier hover
             const images = document.querySelectorAll('.pic');
 

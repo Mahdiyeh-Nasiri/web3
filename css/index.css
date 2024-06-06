@@ -1,4 +1,7 @@
 @media all and (max-width: 575px){
+    .header_menu {
+        height: 22px;
+    }
     .topmenu{
         width: 78%;
         justify-content: right;
@@ -19,59 +22,269 @@
         width: 22%;
         justify-content: flex-end;
     }
-    .navigation{
-        position: relative;
+
+ .navigation {
+    position: relative;
+        width: 100%;
+        height: 50px;
         display: flex;
+        transition: all 300ms ease 0s;
     }
     .slogan{
-        position: absolute;
-        right:20%;
         width: 40%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        left:50%;
+        top: 50%;
     }
-/*
-    .icon1,
-    .icon2,
-    .icon3 {
-        display: none;
+    .menu {
+    position: absolute;
+    top: -22px;
+    right: 100%;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    list-style-type: none;
+    background-color: white;
+    padding-left: 0;
+    z-index: 3;
+  }
+    .menu>li {
+        width: 100%;
+        height: 50px;
+        border-bottom: 0.5px solid rgb(157, 157, 157) ;
     }
 
-    .products {
+    .menu>li:nth-of-type(1) {
+        position: relative;
+    }
+
+    .menu>li:nth-of-type(1)>.icon-nav1 {
         position: absolute;
-        display: flex;
-        justify-content: space-between;
-        width: 50%;
-        height: 200px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: white;
-        border-radius: 0 0 8px 8px;
-        box-shadow: 3px 0 3px rgb(170, 170, 170), -3px 0 3px rgb(170, 170, 170), 0 3px 3px rgb(170, 170, 170);
-        opacity: 0%;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 15px;
+        color: rgb(182, 182, 182);
+        cursor: pointer;
+        transition: all 300ms ease 0s;
+    }
+     .menu>li:nth-of-type(3) {
+        position: relative;
+    }
+
+    .menu>li:nth-of-type(3)>.icon-nav1 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 15px;
+        color: rgb(182, 182, 182);
+        cursor: pointer;
         transition: all 300ms ease 0s;
     }
 
-    .products>div {
-        width: 25%;
-        text-align: center;
-        line-height: 200px;
-        font-family: sans-serif;
-        //font-size: 18px;
-        color: black;
+    .menu>li>a {
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        text-align: right;
+        padding: 0 10px;
+        text-decoration: none;
+        font-family:'iryekanr';
+        color: rgb(61, 61, 61);
+        transition: all 200ms ease 0s;
     }
 
-    .products>div:not(:last-of-type) {
-        border-right: 1px solid rgb(200, 200, 200);
+    .menu>li>a:hover {
+        background-color: rgb(211, 211, 211);
+    }
+
+    .menu-list {
+        display: block;
+        position: absolute;
+        right: 5%;
+        transform: translateY(-50%);
+        top: 50%;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 30px;
+        color: rgb(61, 61, 61);
+        cursor: pointer;
+        transition: all 200ms ease 0s;
+        border: solid 1px rgb(61, 61, 61);
+        border-radius: 6px;
+    }
+
+    .menu-list:hover {
+        color: rgb(153,205,97);
+        border: solid 1px rgb(153,205,97);
+    }
+
+    .bi-search{
+        position: absolute;
+        width: 15%;
+        left: 10px;
+        transform: translateY(-50%);
+        top: 50%;
+    }
+
+   .products {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 50%;
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
+        transition: all 300ms ease 0s;
+        z-index: 4;
+    }
+    .products>.productstext{
+        width: 100%;
+    }
+    .products>.productstext>div {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 10px;
+         font-family:'iryekanr';
+         text-decoration: none;
+        color: rgb(61, 61, 61);
+        cursor: pointer;
+        transition: all 300ms ease 0s;
+        border-bottom: 0.5px solid rgb(157, 157, 157) ;
+    }
+
+    .products>.productstext>div:hover {
+         background-color: rgb(211, 211, 211);
+    }
+
+
+    .products>.productstext>.return>.icon3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 15px;
+        color: rgb(182, 182, 182);
+        cursor: pointer;
+        transition: all 300ms ease 0s;
     }
 
     .show-submenu {
-        opacity: 100%;
+        right: 0;
+        display: block;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.35);
+        height: 100vh;
+    }
+    .picmenu{
+        display: none;
     }
 
+    .products>.productstext>div>.icon-nav1 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 15px;
+        color: rgb(182, 182, 182);
+        cursor: pointer;
+        transition: all 300ms ease 0s;
+    }
+
+
+
+    .support {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 50%;
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
+        transition: all 300ms ease 0s;
+        z-index: 4;
+    }
+    .support>.supportstext{
+        width: 100%;
+    }
+    .support>.supportstext>div {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 10px;
+         font-family:'iryekanr';
+         text-decoration: none;
+        color: rgb(61, 61, 61);
+        cursor: pointer;
+        transition: all 300ms ease 0s;
+        border-bottom: 0.5px solid rgb(157, 157, 157) ;
+
+    }
+
+    .support>.supportstext>div:hover {
+         background-color: rgb(211, 211, 211);
+    }
+
+
+    .support>.supportstext>.return-support>.icon3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 15px;
+        color: rgb(182, 182, 182);
+        cursor: pointer;
+        transition: all 300ms ease 0s;
+    }
+    .item-support>.sublist-support>ul>li>a{
+        font-family:'iryekanr';
+         text-decoration: none;
+        color: rgb(61, 61, 61);
+    }
+    .sublist{
+        display:none;
+    }
     .new-navigation {
         background-color: pink;
-        position: fixed;
+        position: absolute;
         top: 0;
-    }*/
+    }
+    .hidden{
+        display: none;
+    }
+
 /*section2*/
 /*section-4 & section-6*/
     .groupstop{

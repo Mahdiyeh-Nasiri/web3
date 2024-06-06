@@ -301,7 +301,7 @@ window.addEventListener("load", function () {
 
             const slider = document.querySelector('.slider2');
             const slides = document.querySelectorAll('.pic3');
-            let counter = slides.length - 1; // Start from the last slide
+            let counter = slides.length - 1; 
             let key2;
 window.addEventListener("load", function () {
     function updateSlider() {
@@ -331,7 +331,7 @@ window.addEventListener("load", function () {
     document.querySelector('.icon-left').addEventListener("click", nextSlide);
 
     function startSlide() {
-        key2 = setInterval(prevSlide, 3000); // Adjust to call prevSlide to move towards the first slide
+        key2 = setInterval(prevSlide, 3000);
     }
 
     function stopSlide() {
